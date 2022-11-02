@@ -1,9 +1,9 @@
 ﻿Console.WriteLine("Введите первое число из трех");
-int a = Int32.Parse(Console.ReadLine());
+int a = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе число из трех");
-int b = Int32.Parse(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите третье число из трех");
-int c = Int32.Parse(Console.ReadLine());
+int c = Convert.ToInt32(Console.ReadLine());
 
 int max = a;
 
@@ -14,4 +14,4 @@ if (max < c) {
     max = c;
 }
 
-Console.WriteLine(max);
+Console.WriteLine("Max = " + max);
