@@ -1,7 +1,6 @@
 ﻿Console.WriteLine("Введите целое число");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int i = 0;
 int digit = 0;
 
 if (number / 100 > 0)
