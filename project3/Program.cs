@@ -1,7 +1,11 @@
-﻿isPalindrom(21512);
+﻿// try
+// {
+//     Cubes(-3);
+// }
+// catch (Exception e) { Console.WriteLine(e.Message); };
 
 // Task 19
-void isPalindrom(int number) {
+void IsPalindrom(int number) {
     int d1 = 0;
     int d2 = 0;
     string result = "да";
@@ -31,7 +35,7 @@ void isPalindrom(int number) {
 }
 
 // Task 21
-void abs3D() {
+void Abs3D() {
     Console.WriteLine("Введите координаты точки A по очереди x, y и z");
     int a_x = Convert.ToInt32(Console.ReadLine());
     int a_y = Convert.ToInt32(Console.ReadLine());
@@ -48,5 +52,30 @@ void abs3D() {
     result = System.Math.Round(result, 2);
     
     Console.WriteLine(result);
+}
+
+
+// task 23
+void Cubes(int number)
+{
+    if (number > 0)
+    {
+        string result = "";
+        for (int i = 1; i <= number; i++)
+        {
+            result = result + System.Math.Pow(i, 3);
+            if (number != i)
+            {
+                result = result + ", ";
+            }
+        }
+
+        Console.WriteLine(result);
+    }
+    else
+    {
+        throw new ArgumentException("Введите целое число больше 0");
+    }
+
 }
 
