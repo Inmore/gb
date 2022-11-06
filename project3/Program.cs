@@ -1,14 +1,25 @@
-﻿// try
+﻿// IsPalindrom(14212);
+// IsPalindrom(12821);
+// IsPalindrom(23432);
+
+// try
 // {
-//     Cubes(-3);
+//     Abs3D();
 // }
 // catch (Exception e) { Console.WriteLine(e.Message); };
 
 // try
 // {
-//     AbsND();
+//     // Cubes(3);
+//     Cubes(5);
 // }
 // catch (Exception e) { Console.WriteLine(e.Message); };
+
+try
+{
+    AbsND();
+}
+catch (Exception e) { Console.WriteLine(e.Message); };
 
 // Task 19
 void IsPalindrom(int number) {
