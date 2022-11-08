@@ -45,15 +45,19 @@ void PrintArray()
     for (int i = 0; i < array.Length; i++)
     {
         string? value = Console.ReadLine();
-        if (!string.IsNullOrEmpty(value)) {
+        if (!string.IsNullOrEmpty(value))
+        {
             array[i] = value;
-        } else {
+        }
+        else
+        {
             Console.WriteLine("Вы ничего не ввели, требуется значение");
             i--;
         }
     }
 
-    for (int i = 0; i < array.Length; i++) {
+    for (int i = 0; i < array.Length; i++)
+    {
         Console.Write(array[i]);
         if (i != array.Length - 1) Console.Write(", ");
     }
