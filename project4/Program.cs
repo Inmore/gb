@@ -36,3 +36,26 @@ int FiguresSum(int a)
     }
     return result;
 }
+
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов с клавиатуры и выводит массив на экран.
+void PrintArray()
+{
+    string?[] array = new string[8];
+    Console.WriteLine("Введите по очереди восемь элементов для создания массива");
+    for (int i = 0; i < array.Length; i++)
+    {
+        string? value = Console.ReadLine();
+        if (!string.IsNullOrEmpty(value)) {
+            array[i] = value;
+        } else {
+            Console.WriteLine("Вы ничего не ввели, требуется значение");
+            i--;
+        }
+    }
+
+    for (int i = 0; i < array.Length; i++) {
+        Console.Write(array[i]);
+        if (i != array.Length - 1) Console.Write(", ");
+    }
+    Console.WriteLine("");
+}
