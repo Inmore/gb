@@ -63,3 +63,29 @@ void PrintArray()
     }
     Console.WriteLine("");
 }
+
+// Задача 26. - HARD необязательная Напишите программу, которая принимает на вход целое или дробное число и выдаёт количество цифр в числе.
+// 452 -> 3
+// 82 -> 2
+// 9,012 ->4
+int FigureCount(double a)
+{
+    if (a - Math.Truncate(a) > 0)
+    {
+        while (a - Math.Truncate(a) > 0)
+        {
+            a = a * 10;
+        }
+    }
+
+    int count = 0;
+    int number = Convert.ToInt32(a);
+
+    while (number > 0)
+    {
+        number = number / 10;
+        count++;
+    }
+
+    return count;
+}
