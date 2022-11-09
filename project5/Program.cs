@@ -12,7 +12,8 @@ int CountEven(int[] arr)
     int count = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i] % 2 == 0) {
+        if (arr[i] % 2 == 0)
+        {
             count++;
         }
     }
@@ -29,12 +30,14 @@ for (int i = 0; i < randomNumbers.Length; i++)
     randomNumbers[i] = new Random().Next(-99, 100);
 }
 
-int OddPositionItemsSum(int[] arr) {
+int OddPositionItemsSum(int[] arr)
+{
     int result = 0;
 
     for (int i = 0; i < arr.Length; i++)
     {
-        if (i % 2 != 0) {
+        if (i % 2 != 0)
+        {
             result = result + arr[i];
         }
     }
@@ -81,11 +84,13 @@ for (int i = 0; i < rndNums.Length; i++)
     rndNums[i] = new Random().Next(-99, 100);
 }
 string[] res = AnalizeArray(rndNums);
-for (int i = 0; i < res.Length; i++) {
+for (int i = 0; i < res.Length; i++)
+{
     Console.WriteLine(res[i]);
 }
 
-string[] AnalizeArray(int[] array) {
+string[] AnalizeArray(int[] array)
+{
     string[] result = new string[3];
     int min = array[0];
     int max = array[0];
@@ -97,12 +102,14 @@ string[] AnalizeArray(int[] array) {
 
     for (int i = 0; i < array.Length; i++)
     {
-        if (min > array[i]) {
+        if (min > array[i])
+        {
             min = array[i];
             index_min = i;
         }
-        if (max < array[i]) {
-            max = array[i]; 
+        if (max < array[i])
+        {
+            max = array[i];
             index_max = i;
         }
         sum = sum + array[i];
@@ -137,9 +144,12 @@ double ArrayMedian(int[] array)
         }
     }
 
-    if (array.Length % 2 > 0) {
+    if (array.Length % 2 > 0)
+    {
         result = array[array.Length / 2];
-    } else {
+    }
+    else
+    {
         result = (array[array.Length / 2 - 1] + array[array.Length / 2]) / 2;
     }
 
