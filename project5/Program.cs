@@ -43,3 +43,29 @@ int OddPositionItemsSum(int[] arr) {
     return result;
 }
 
+// Задача 38: Задайте массив вещественных чисел. 
+// Найдите разницу между максимальным и минимальным элементов массива.
+
+double[] realArray = new double[5];
+
+for (int i = 0; i < realArray.Length; i++)
+{
+    realArray[i] = new Random().NextDouble();
+}
+DifferenceBetweenMinAndMax(realArray);
+double DifferenceBetweenMinAndMax(double[] array)
+{
+    double diff = 0;
+    double min = array[0];
+    double max = array[0];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (min > array[i]) min = array[i];
+        if (max < array[i]) max = array[i];
+    }
+
+    diff = max - min;
+
+    return diff;
+}
