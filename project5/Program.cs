@@ -19,3 +19,27 @@ int CountEven(int[] arr)
     return count;
 }
 
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. 
+// Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19
+// [-4, -6, 89, 6] -> 0
+int[] randomNumbers = new int[4];
+for (int i = 0; i < randomNumbers.Length; i++)
+{
+    randomNumbers[i] = new Random().Next(-99, 100);
+}
+
+int OddPositionItemsSum(int[] arr) {
+    int result = 0;
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i] + " / ");
+        if (i % 2 != 0) {
+            result = result + arr[i];
+        }
+    }
+
+    return result;
+}
+
