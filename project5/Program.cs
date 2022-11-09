@@ -34,7 +34,6 @@ int OddPositionItemsSum(int[] arr) {
 
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write(arr[i] + " / ");
         if (i % 2 != 0) {
             result = result + arr[i];
         }
@@ -80,7 +79,6 @@ int[] rndNums = new int[7];
 for (int i = 0; i < rndNums.Length; i++)
 {
     rndNums[i] = new Random().Next(-99, 100);
-    Console.Write(rndNums[i] + " / ");
 }
 string[] res = AnalizeArray(rndNums);
 for (int i = 0; i < res.Length; i++) {
