@@ -69,3 +69,83 @@ double DifferenceBetweenMinAndMax(double[] array)
 
     return diff;
 }
+
+// Задача HARD STAT необязательная: Задайте массив случайных целых чисел. 
+// Найдите максимальный элемент и его индекс, минимальный элемент и его индекс, 
+// среднее арифметическое всех элементов. Сохранить эту инфу в отдельный массив и вывести 
+// на экран с пояснениями. Найти медианное значение первоначалального массива , возможно 
+// придется кое-что для этого дополнительно выполнить.
+
+int[] rndNums = new int[7];
+for (int i = 0; i < rndNums.Length; i++)
+{
+    rndNums[i] = new Random().Next(-99, 100);
+    Console.Write(rndNums[i] + " / ");
+}
+string[] res = AnalizeArray(rndNums);
+for (int i = 0; i < res.Length; i++) {
+    Console.WriteLine(res[i]);
+}
+
+string[] AnalizeArray(int[] array) {
+    string[] result = new string[3];
+    int min = array[0];
+    int max = array[0];
+    int index_min = 0;
+    int index_max = 0;
+    int sum = 0;
+    int average = 0;
+    int count = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (min > array[i]) {
+            min = array[i];
+            index_min = i;
+        }
+        if (max < array[i]) {
+            max = array[i]; 
+            index_max = i;
+        }
+        sum = sum + array[i];
+        count++;
+    }
+    average = sum / count;
+
+    for (int i = 0; i < result.Length; i++)
+    {
+        if (i == 0) result[i] = $"максимальный элемент {max} с индексом {index_max}";
+        if (i == 1) result[i] = $"минимальный элемент {min} с индексом {index_min}";
+        if (i == 2) result[i] = $"среднее арифметическое всех элементов {average}";
+    }
+    return result;
+}
+// Console.WriteLine(" Median: " + ArrayMedian(rndNums));
+double ArrayMedian(int[] array)
+{
+    double result = 0.0;
+    int temp;
+
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[i] > array[j])
+            {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+
+    if (array.Length % 2 > 0) {
+        result = array[array.Length / 2];
+    } else {
+        result = (array[array.Length / 2 - 1] + array[array.Length / 2]) / 2;
+    }
+
+    return result;
+}
+
+
