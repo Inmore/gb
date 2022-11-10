@@ -25,4 +25,34 @@ int CountPositive(int m)
     }
 
 }
-Console.WriteLine("Введено чисел больше 0: " + CountPositive(5));
+// Console.WriteLine("Введено чисел больше 0: " + CountPositive(5));
+
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями 
+// y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+// CrossPoint();
+
+void CrossPoint()
+{
+    double crossPoint_x = 0.0;
+    double crossPoint_y = 0.0;
+
+    int[] line_1 = new int[2];
+    Console.WriteLine("Введите по очереди b1 и k1 для первой линии");
+    for (int i = 0; i < line_1.Length; i++)
+    {
+        line_1[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    int[] line_2 = new int[2];
+    Console.WriteLine("Введите по очереди b2 и k2 для второй линии");
+    for (int i = 0; i < line_2.Length; i++)
+    {
+        line_2[i] = Convert.ToInt32(Console.ReadLine());
+    }
+
+    crossPoint_x = (double)(line_2[0] - line_1[0]) / (line_1[1] - line_2[1]);
+    crossPoint_y = line_1[1] * crossPoint_x + line_1[0];
+
+    Console.WriteLine($"({crossPoint_x}; {crossPoint_y})");
+}
