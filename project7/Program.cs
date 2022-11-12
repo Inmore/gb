@@ -84,7 +84,7 @@ string InArray(int num, int[,] array) {
 // 5 9 2 3
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
-Console.WriteLine(ColumnsAverage(array_50));
+// Console.WriteLine(ColumnsAverage(array_50));
 string ColumnsAverage(int[,] array) {
     string result = "";
  
