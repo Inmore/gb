@@ -104,3 +104,93 @@ string ColumnsAverage(int[,] array) {
  
     return "Среднее арифметическое каждого столбца: " + result + ".";
 }
+
+// Задача HARD SORT необязательная. Считается за три обязательных
+// Задайте двумерный массив из целых чисел. Количество строк и столбцов задается с клавиатуры. 
+// Отсортировать элементы по возрастанию слева направо и сверху вниз.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 10 3
+// После сортировки
+// 1 2 3 4
+// 5 7 9 10
+
+// Генерируем массив
+// int[,] intArray = GenerateIntArray();
+// Выводим его на экран
+// Print2DIntArray(intArray);
+// Выводим на экран отсортированный массив
+// Console.WriteLine("Отсортированный массив");
+// Print2DIntArray(SortIntArray(intArray));
+
+int[,] SortIntArray(int[,] array) {
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            int min = array[i, j];
+            int temp;
+            
+            for (int p = 0; p < array.GetLength(0); p++)
+            {
+                for (int q = 0; q < array.GetLength(1); q++)
+                {
+                    if (min < array[p, q])
+                    {
+                        temp = array[p, q];
+                        array[p, q] = min;
+                        array[i, j] = temp;
+                        min = temp;
+                    }
+                }
+            }
+        }
+    }
+    return array;
+}
+ 
+int[,] GenerateIntArray()
+{
+    Console.WriteLine("Введите количество строк");
+    int m = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите количество столбцов");
+    int n = Convert.ToInt32(Console.ReadLine());
+    int[,] array = new int[m, n];
+    Random rnd = new Random();
+ 
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            array[i, j] = rnd.Next(1, 11);
+        }
+    }
+ 
+    return array;
+}
+
+void Print2DIntArray(int[,] array)
+{
+    int resultLength = 7;
+    
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        string result = "";
+        
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            result = $"{array[i, j]}";
+            int k = 0;
+            int resLen = result.Length;
+        
+            while (k < resultLength - resLen) {
+                result = " " + result; 
+                k++;
+            }
+
+            Console.Write(result);
+        }
+        Console.WriteLine("");
+    }
+}
