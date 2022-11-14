@@ -77,7 +77,7 @@ int[,] SortLineInt2DArray(int[,] array) {
  
 // Задаем массив
 int[,] array_56 = new int[,] {{1, 4, 7, 2}, {5, 9, 2, 3}, {8, 4, 2, 4}, {5, 2, 6, 7}};
-Console.WriteLine(MinSumLine(array_56));
+// Console.WriteLine(MinSumLine(array_56));
 string MinSumLine(int[,] array) {
     int temp = 0;
     int line_number = 1;
@@ -101,4 +101,38 @@ string MinSumLine(int[,] array) {
         }
     }
     return line_number + " строка";
+}
+
+// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+// Например, даны 2 матрицы:
+// 2 4 | 3 4
+// 3 2 | 3 3
+// Результирующая матрица будет:
+// 18 20
+// 15 18
+
+int[,] matrix_1 = new int[,] {{2, 4}, {3, 2}};
+int[,] matrix_2 = new int[,] {{3, 4}, {3, 3}};
+Console.WriteLine("Матрица 1");
+Print2DIntArray(matrix_1);
+Console.WriteLine("Матрица 2");
+Print2DIntArray(matrix_2);
+Console.WriteLine("Результирующая матрица");
+Print2DIntArray(MultiplyMatrix(matrix_1, matrix_2));
+
+int[,] MultiplyMatrix(int[,] mA, int[,] mB) {
+
+    int[,] matrix = new int[mA.GetLength(1), mB.GetLength(0)];
+
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            for (int k = 0; k < matrix_1.GetLength(1); k++) {
+                matrix[i, j] = matrix[i, j] + matrix_1[i, k] * matrix_2[k, j];
+            }
+        }
+    }
+
+    return matrix;
 }
