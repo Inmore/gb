@@ -217,6 +217,36 @@ int[,] array_62 = new int[4,4];
 Print2DIntArray(FillArray(array_62));
 
 int[,] FillArray(int[,] array) {
+    int step = 1;
+    int length = 4;
+    
+    for (int i = 0; i < length; i++) {
+        array[0, i] = step; 
+        step++;
+    }
+    for (int i = 1; i < length; i++) {
+        array[i, 3] = step;
+        step++;
+    }
+    for (int i = 2; i > -1; i--) {
+        array[3, i] = step;
+        step++;
+    }
+    for (int i = 2; i > 0; i--) {
+        array[i, 0] = step;
+        step++;
+    }
+    for (int i = 1; i < 3; i++) {
+        array[1, i] = step;
+        step++;
+    }
+    for (int i = 2; i < 3; i++) {
+        array[i, 2] = step;
+        step++;
+    }
+    for (int i = 1; i > 0; i--) {
+        array[2, i] = step;
+    }
     return array;
 }
 
