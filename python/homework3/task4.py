@@ -17,7 +17,7 @@ def dec_to_bin():
     while dec > 0:
         result = str(dec % 2) + result
         dec //= 2
-    return minus + result
+    print(minus + result)
 
 
-print(dec_to_bin())
+dec_to_bin()
