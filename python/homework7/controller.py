@@ -24,5 +24,5 @@ def create_xml():
 
 def from_xml_to_html(filename):
     data = user_interface.get_data_from_xml(filename)
-    html_view.create(data)
+    html_view.create(data, filename)
     return None
